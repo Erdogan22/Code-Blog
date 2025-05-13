@@ -67,6 +67,7 @@ class Base(DeclarativeBase):
 # Explicitly set the instance path to be inside the project folder
 app.instance_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'instance')
 app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{os.path.join(app.instance_path, 'posts.db')}"
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(model_class=Base)
